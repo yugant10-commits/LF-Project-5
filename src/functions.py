@@ -2,6 +2,8 @@ from tensorflow.keras.applications.vgg16 import VGG16
 from tensorflow.keras.applications.resnet50 import ResNet50
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.applications.vgg16 import preprocess_input
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.preprocessing.image import load_img
 
 import numpy as np
 import tensorflow as tf
@@ -11,24 +13,6 @@ import matplotlib.pyplot as plt
 model = VGG16(weights="imagenet", include_top=False)
 model2 = ResNet50(weights="imagenet", include_top=False)
 
-
-def image_to_array(image_list):
-    """converts the image to array
-
-    Parameters
-    ----------
-    image_list : [list]
-        [a list that contains images]
-
-    Returns
-    -------
-    [list]
-        [returns a list of images that have been converted to array.]
-    """
-    array_image = []
-    for image in images:
-        array_image.append(img_to_array(image))
-    return array_image
 
 
 def process_image(image_array):
